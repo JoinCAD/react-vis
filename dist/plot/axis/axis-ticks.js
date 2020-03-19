@@ -203,7 +203,8 @@ var AxisTicks = function (_React$Component) {
           style = _props3.style,
           tickFormat = _props3.tickFormat,
           tickTotal = _props3.tickTotal,
-          tickValues = _props3.tickValues;
+          tickValues = _props3.tickValues,
+          _onClick = _props3.onClick;
 
 
       var x = orientation === LEFT ? width : 0;
@@ -242,7 +243,10 @@ var AxisTicks = function (_React$Component) {
             'text',
             _extends({}, textProps, {
               className: 'rv-xy-plot__axis__tick__text',
-              style: _extends({}, style, style.text)
+              style: _extends({}, style, style.text, { cursor: _onClick ? 'pointer' : 'default' }),
+              onClick: function onClick() {
+                return _onClick && _onClick(v);
+              }
             }),
             labelNode
           )
