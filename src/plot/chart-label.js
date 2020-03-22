@@ -53,10 +53,13 @@ class ChartLabel extends React.PureComponent {
     return (
       <g
         transform={`translate(${xPos}, ${yPos})`}
-        className={getCombinedClassName("rv-xy-plot__axis__title", className)}>
+        className={getCombinedClassName(
+          "rv-xy-plot__axis__title",
+          className,
+          onClick ? "rv-xy-plot__axis__clickable" : ""
+        )}>
         <text
           {...style}
-          style={{cursor: onClick ? 'pointer' : 'default'}}
           onClick={() => onClick && onClick(text)}
         >
           {text}

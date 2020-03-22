@@ -20,6 +20,8 @@ var _axisUtils = require('../../utils/axis-utils');
 
 var _scalesUtils = require('../../utils/scales-utils');
 
+var _stylingUtils = require('../../utils/styling-utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -242,8 +244,8 @@ var AxisTicks = function (_React$Component) {
           }) : undefined) : _react2.default.createElement(
             'text',
             _extends({}, textProps, {
-              className: 'rv-xy-plot__axis__tick__text',
-              style: _extends({}, style, style.text, { cursor: _onClick ? 'pointer' : 'default' }),
+              className: (0, _stylingUtils.getCombinedClassName)("rv-xy-plot__axis__tick__text", _onClick ? "rv-xy-plot__axis__clickable" : ""),
+              style: _extends({}, style, style.text),
               onClick: function onClick() {
                 return _onClick && _onClick(v);
               }

@@ -79,11 +79,10 @@ var ChartLabel = function (_React$PureComponent) {
         'g',
         {
           transform: 'translate(' + xPos + ', ' + yPos + ')',
-          className: (0, _stylingUtils.getCombinedClassName)("rv-xy-plot__axis__title", className) },
+          className: (0, _stylingUtils.getCombinedClassName)("rv-xy-plot__axis__title", className, _onClick ? "rv-xy-plot__axis__clickable" : "") },
         _react2.default.createElement(
           'text',
           _extends({}, style, {
-            style: { cursor: _onClick ? 'pointer' : 'default' },
             onClick: function onClick() {
               return _onClick && _onClick(text);
             }
