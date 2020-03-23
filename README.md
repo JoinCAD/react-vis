@@ -1,5 +1,8 @@
 > This library is deprecated. Please see `DEPRECATED.md`.
 
+This is the Join fork of React-vis, with customization including:
+* Links in text labels
+
 <p align="right">
   <a href="https://npmjs.org/package/react-vis">
     <img src="https://img.shields.io/npm/v/react-vis.svg?style=flat-square" alt="version" />
