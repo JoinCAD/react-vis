@@ -26,6 +26,11 @@ $rv-xy-plot-tooltip-padding: 7px 10px;
   display: block;
 }
 
+.rv-xy-plot__axis__clickable {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .rv-xy-plot__axis__line {
   fill: none;
   stroke-width: 2px;
@@ -45,6 +50,7 @@ $rv-xy-plot-tooltip-padding: 7px 10px;
   text {
     fill: $rv-xy-plot-axis-font-color;
     font-size: $rv-xy-plot-axis-font-size;
+    cursor: inherit;
   }
 }
 

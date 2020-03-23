@@ -24,6 +24,7 @@ import PropTypes from 'prop-types';
 
 import {ORIENTATION, getTickValues} from 'utils/axis-utils';
 import {getAttributeScale} from 'utils/scales-utils';
+import {getCombinedClassName} from 'utils/styling-utils';
 
 const {LEFT, RIGHT, TOP, BOTTOM} = ORIENTATION;
 
@@ -208,8 +209,11 @@ class AxisTicks extends React.Component {
             : (
               <text
                 {...textProps}
-                className="rv-xy-plot__axis__tick__text"
-                style={{...style, ...style.text, ...{cursor: onClick ? 'pointer' : 'default'}}}
+                className={getCombinedClassName(
+                  "rv-xy-plot__axis__tick__text",
+                  onClick ? "rv-xy-plot__axis__clickable" : ""
+                )}
+                style={{...style, ...style.text}}
                 onClick={() => onClick && onClick(v)}
               >
                 {labelNode}
