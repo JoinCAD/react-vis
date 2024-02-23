@@ -216,10 +216,14 @@ class AxisTicks extends React.Component {
             <text
               {...textProps}
               className={getCombinedClassName(
-                "rv-xy-plot__axis__tick__text",
-                onClick ? "rv-xy-plot__axis__clickable" : ""
+                'rv-xy-plot__axis__tick__text',
+                onClick ? 'rv-xy-plot__axis__clickable' : ''
               )}
-              style={{...style, ...style.text, ...{cursor: onClick ? 'pointer' : 'default'}}}
+              style={{
+                ...style,
+                ...style.text,
+                ...{cursor: onClick ? 'pointer' : 'default'}
+              }}
               onClick={() => onClick && onClick(v)}
             >
               {labelNode}
