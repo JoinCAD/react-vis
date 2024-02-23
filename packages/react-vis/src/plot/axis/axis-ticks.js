@@ -165,7 +165,8 @@ class AxisTicks extends React.Component {
       style,
       tickFormat,
       tickTotal,
-      tickValues
+      tickValues,
+      onClick
     } = this.props;
 
     const x = orientation === LEFT ? width : 0;
@@ -214,7 +215,8 @@ class AxisTicks extends React.Component {
             <text
               {...textProps}
               className="rv-xy-plot__axis__tick__text"
-              style={{...style, ...style.text}}
+              style={{...style, ...style.text, ...{cursor: onClick ? 'pointer' : 'default'}}}
+              onClick={() => onClick && onClick(v)}
             >
               {labelNode}
             </text>
