@@ -201,34 +201,25 @@ class AxisTicks extends React.Component {
             className="rv-xy-plot__axis__tick__line"
             style={{...style, ...style.line}}
           />
-          {shouldRenderAsOwnNode ? (
-            React.cloneElement(
-              labelNode,
-              shouldAddProps
-                ? {
-                    ...textProps,
-                    containerWidth: width,
-                    tickCount: values.length
-                  }
-                : undefined
-            )
-          ) : (
-            <text
-              {...textProps}
-              className={getCombinedClassName(
-                'rv-xy-plot__axis__tick__text',
-                onClick ? 'rv-xy-plot__axis__clickable' : ''
-              )}
-              style={{
-                ...style,
-                ...style.text,
-                ...{cursor: onClick ? 'pointer' : 'default'}
-              }}
-              onClick={() => onClick && onClick(v)}
-            >
-              {labelNode}
-            </text>
-          )}
+          {shouldRenderAsOwnNode
+            ? React.cloneElement(labelNode, shouldAddProps ? {
+              ...textProps,
+              containerWidth: width,
+              tickCount: values.length
+            } : undefined)
+            : (
+              <text
+                {...textProps}
+                className={getCombinedClassName(
+                  "rv-xy-plot__axis__tick__text",
+                  onClick ? "rv-xy-plot__axis__clickable" : ""
+                )}
+                style={{...style, ...style.text}}
+                onClick={() => onClick && onClick(v)}
+              >
+                {labelNode}
+              </text>
+            )}
         </g>
       );
     });
