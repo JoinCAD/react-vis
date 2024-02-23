@@ -43,7 +43,8 @@ class ChartLabel extends React.PureComponent {
       style,
       text,
       xPercent,
-      yPercent
+      yPercent,
+      onClick
     } = this.props;
     const width = innerWidth + (includeMargin ? marginLeft + marginRight : 0);
     const height = innerHeight + (includeMargin ? marginTop + marginBottom : 0);
@@ -52,9 +53,14 @@ class ChartLabel extends React.PureComponent {
     return (
       <g
         transform={`translate(${xPos}, ${yPos})`}
-        className={getCombinedClassName('rv-xy-plot__axis__title', className)}
-      >
-        <text {...style}>{text}</text>
+        className={getCombinedClassName("rv-xy-plot__axis__title", className)}>
+        <text
+          {...style}
+          style={{cursor: onClick ? 'pointer' : 'default'}}
+          onClick={() => onClick && onClick(text)}
+        >
+          {text}
+        </text>
       </g>
     );
   }
@@ -67,7 +73,8 @@ ChartLabel.propTypes = {
   style: PropTypes.object,
   text: PropTypes.string.isRequired,
   xPercent: PropTypes.number.isRequired,
-  yPercent: PropTypes.number.isRequired
+  yPercent: PropTypes.number.isRequired,
+  onClick: PropTypes.func
 };
 ChartLabel.defaultProps = {
   className: '',
