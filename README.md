@@ -1,3 +1,6 @@
+This is the Join fork of React-vis, with customization including:
+* Links in text labels
+
 <p align="right">
   <a href="./DEPRECATED.md">
     <img src="https://img.shields.io/maintenance/no/2020?style=flat-square" alt="deprecated" />
