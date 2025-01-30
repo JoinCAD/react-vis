@@ -17,7 +17,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _window = require('global/window');
+var _window = window;
 
 var _window2 = _interopRequireDefault(_window);
 
